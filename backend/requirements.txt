@@ -1,0 +1,10 @@
+@"
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+python-dotenv
+pyjwt
+bcrypt
+httpx
+"@ | Set-Content backend\requirements.txt
