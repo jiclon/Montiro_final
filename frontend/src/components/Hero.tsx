@@ -2,17 +2,16 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import StudioBackdrop from './StudioBackdrop'
 import Wordmark from './Wordmark'
-import watchLoop from '../assets/watch-loop.mp4'
 import watchPoster from '../assets/watch-poster.jpg'
 import { WHATSAPP } from '../lib/contacts'
 
-/** Dissolves the black edges of the footage into the page. */
+/** Dissolves the black edges of the photo into the page. */
 const EDGE_MASK = 'radial-gradient(50% 48% at 50% 46%, #000 68%, rgba(0,0,0,0) 100%)'
 
 /** The white the dial opens into — the same value the next section is painted. */
 export const DIAL_WHITE = '#F2F1EC'
 
-/** Where the dial sits inside the video frame. */
+/** Where the dial sits inside the photo. */
 const DIAL_X = 0.5
 const DIAL_Y = 0.44
 
@@ -201,21 +200,7 @@ export default function Hero() {
                 style={{ transformOrigin: `${DIAL_X * 100}% ${DIAL_Y * 100}%` }}
               >
                 <div style={{ maskImage: EDGE_MASK, WebkitMaskImage: EDGE_MASK }}>
-                  {still ? (
-                    <img src={watchPoster} alt="Наручные часы Montiro" className={mediaClass} />
-                  ) : (
-                    <video
-                      className={mediaClass}
-                      src={watchLoop}
-                      poster={watchPoster}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="auto"
-                      aria-label="Наручные часы Montiro"
-                    />
-                  )}
+                  <img src={watchPoster} alt="Наручные часы Montiro" className={mediaClass} />
                 </div>
 
                 {/* marks the dial centre through every transform */}
