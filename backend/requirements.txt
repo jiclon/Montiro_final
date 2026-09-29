@@ -1,4 +1,4 @@
-g
+
 fastapi
 uvicorn[standard]
 sqlalchemy
@@ -7,3 +7,4 @@ python-dotenv
 pyjwt
 bcrypt
 httpx
+psycopg[binary]
